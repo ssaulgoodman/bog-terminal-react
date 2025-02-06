@@ -1,0 +1,41 @@
+{
+	"Version": 3,
+	"FileReferences": {
+		"Moc": "IGOR_2d0.moc3",
+		"Textures": [
+			"IGOR_2d0.2048/texture_00.png"
+		],
+		"Physics": "IGOR_2d0.physics3.json",
+		"DisplayInfo": "IGOR_2d0.cdi3.json",
+		"Expressions": [
+			{
+				"Name": "default",
+				"File": "expressions/IGOR_2d0.exp3.json"
+			}
+		],
+		"Motions": {
+			"": [
+				{
+					"File": "motions/IGOR_2d0.motion3.json"
+				}
+			]
+		}
+	},
+	"Groups": [
+		{
+			"Target": "Parameter",
+			"Name": "EyeBlink",
+			"Ids": [
+				"ParamEyeLOpen",
+				"ParamEyeROpen"
+			]
+		},
+		{
+			"Target": "Parameter",
+			"Name": "LipSync",
+			"Ids": [
+				"ParamA"
+			]
+		}
+	]
+}

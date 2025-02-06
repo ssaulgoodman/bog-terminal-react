@@ -6,6 +6,7 @@ import {
   useLocation,
 } from "react-router-dom";
 import ChatbotPage from "./pages/ChatbotPage";
+import TestPage from "./pages/TestPage";
 
 function App() {
   const action = useNavigationType();
@@ -46,6 +47,7 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<ChatbotPage />} />
+      <Route path="/testpage" element={<TestPage />} />
     </Routes>
   );
 }

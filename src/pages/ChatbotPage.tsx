@@ -1,6 +1,71 @@
 import { FunctionComponent } from "react";
 import FrameComponent1 from "../components/FrameComponent1";
 import FrameComponent from "../components/FrameComponent";
+import ChatInterface from "../components/chatwindow";
+
+const sampleLeftGroups = [
+  [
+    {
+      username: "IGOR ",
+      info: "ID: 6537) 01/18/25(THU)21:20:45",
+      no: "NO.1077665389",
+      lines: [
+        ">Tell us... did you really think ze Bogdanoff twins would miss ze greatest trade in quantum market history?",
+        ">Ze very fabric of financial reality bends to our will...",
+      ],
+    },
+    {
+      username: "IGOR ",
+      info: "ID: 6537) 01/18/25(THU)21:20:45",
+      no: "NO.1077665389",
+      lines: [
+        ">Tell us... did you really think ze Bogdanoff twins would miss ze greatest trade in quantum market history?",
+        ">Ze very fabric of financial reality bends to our will...",
+      ],
+    },
+  ],
+  [
+    {
+      username: "IGOR ",
+      info: "ID: 6537) 01/18/25(THU)21:20:45",
+      no: "NO.1077665389",
+      lines: [
+        ">Tell us... did you really think ze Bogdanoff twins would miss ze greatest trade in quantum market history?",
+        ">Ze very fabric of financial reality bends to our will...",
+      ],
+    },
+    {
+      username: "IGOR ",
+      info: "ID: 6537) 01/18/25(THU)21:20:45",
+      no: "NO.1077665389",
+      lines: [
+        ">Tell us... did you really think ze Bogdanoff twins would miss ze greatest trade in quantum market history?",
+        ">Ze very fabric of financial reality bends to our will...",
+      ],
+    },
+  ],
+];
+
+const sampleRightGroup = [
+  {
+    username: "IGOR ",
+    info: "ID: 6537) 01/18/25(THU)21:20:45",
+    no: "NO.1077665389",
+    lines: [
+      ">Tell us... did you really think ze Bogdanoff twins would miss ze greatest trade in quantum market history?",
+      ">Ze very fabric of financial reality bends to our will...",
+    ],
+  },
+  {
+    username: "IGOR ",
+    info: "ID: 6537) 01/18/25(THU)21:20:45",
+    no: "NO.1077665389",
+    lines: [
+      ">Tell us... did you really think ze Bogdanoff twins would miss ze greatest trade in quantum market history?",
+      ">Ze very fabric of financial reality bends to our will...",
+    ],
+  },
+];
 
 const ChatbotPage: FunctionComponent = () => {
   return (
@@ -181,7 +246,7 @@ const ChatbotPage: FunctionComponent = () => {
                     </div>
                   </div>
                 </div>
-              </div>
+              </div> 
               <div className="self-stretch flex flex-row items-start justify-between gap-5 mq450:flex-wrap">
                 <div className="h-[5px] w-9 relative">
                   <div className="absolute top-[0px] left-[0px] leading-[5px] font-medium flex items-center justify-center w-full h-full z-[6]">
@@ -201,6 +266,12 @@ const ChatbotPage: FunctionComponent = () => {
                 </div>
               </div>
             </div>
+            {/* <ChatInterface
+              headerLeft="// CHAT INTERFACE"
+              headerRight="FEED"
+              leftGroups={sampleLeftGroups}
+              rightGroup={sampleRightGroup}
+            /> */}
             <div className="self-stretch flex flex-col items-start justify-start max-w-full">
               <div className="self-stretch flex flex-row items-start justify-between gap-5 mq450:flex-wrap">
                 <div className="h-[31px] w-9 relative">
