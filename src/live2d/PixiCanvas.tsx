@@ -42,19 +42,19 @@ export default function PixiCanvas({
         backgroundAlpha: 0,
       });
 
-      // --- Load Left Model ---
-      const leftModelUrl = modelMap[leftModelName];
-      const leftModel = await Live2DModel.from(leftModelUrl, {
-        autoInteract: false,
-      });
-      leftModelRef.current = leftModel;
-
       // --- Load Right Model ---
       const rightModelUrl = modelMap[rightModelName];
       const rightModel = await Live2DModel.from(rightModelUrl, {
         autoInteract: false,
       });
       rightModelRef.current = rightModel;
+
+      // --- Load Left Model ---
+      const leftModelUrl = modelMap[leftModelName];
+      const leftModel = await Live2DModel.from(leftModelUrl, {
+        autoInteract: false,
+      });
+      leftModelRef.current = leftModel;
 
       // --- Calculate positions and scaling ---
       const canvasWidth = app.view.width;
@@ -64,6 +64,11 @@ export default function PixiCanvas({
       const leftModelRatio = leftModel.width / leftModel.height;
       leftModel.height = canvasHeight * 0.7; // 70% of canvas height
       leftModel.width = leftModel.height * leftModelRatio;
+      // then to add an extra scale factor:
+      const leftextraScale = 1.2;
+
+      leftModel.width *= leftextraScale;
+      leftModel.height *= leftextraScale;
       leftModel.x = canvasWidth / 4 - leftModel.width / 2 + 100; // shifted right by 100px
       leftModel.y = 0;
 
@@ -71,6 +76,10 @@ export default function PixiCanvas({
       const rightModelRatio = rightModel.width / rightModel.height;
       rightModel.height = canvasHeight * 0.7;
       rightModel.width = rightModel.height * rightModelRatio;
+      const rightextraScale = 1.2;
+
+      rightModel.width *= rightextraScale;
+      rightModel.height *= rightextraScale;
       rightModel.x = (3 * canvasWidth) / 4 - rightModel.width / 2 + 100;
       rightModel.y = 0;
 
@@ -112,5 +121,9 @@ export default function PixiCanvas({
     setLoading,
   ]);
 
-  return <canvas ref={canvasRef} />;
+  return (
+    <div className="w-full h-full">
+      <canvas ref={canvasRef} />
+    </div>
+  );
 }

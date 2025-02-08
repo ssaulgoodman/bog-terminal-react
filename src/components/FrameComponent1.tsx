@@ -1,5 +1,4 @@
 import type { FC } from "react";
-import type { JSX } from "react";
 
 export type FrameComponent1Type = {
   className?: string;
@@ -113,40 +112,6 @@ const FrameComponent1: FC<FrameComponent1Type> = ({
       </nav>
       <div className="w-[1192px] flex flex-row items-start justify-end py-0 px-1.5 box-border max-w-full mq1275:w-3">
         <div className="flex-1 flex flex-row items-start justify-between max-w-full gap-5 mq1275:hidden">
-          <div className="h-[5px] w-[27.3px] relative">
-            <div className="absolute top-[0px] left-[0px] leading-[5px] font-medium flex items-center justify-center w-full h-full z-[2]">
-              +
-            </div>
-            <div className="absolute top-[0px] left-[0px] leading-[5px] font-light flex items-center justify-center w-full h-full z-[3]">
-              +
-            </div>
-          </div>
-          <div className="h-[5px] w-[301.3px] relative">
-            <div className="absolute top-[0px] left-[0px] w-[27.3px] h-[5px]">
-              <div className="absolute top-[0px] left-[0px] leading-[5px] font-medium flex items-center justify-center w-full h-full z-[2]">
-                +
-              </div>
-              <div className="absolute top-[0px] left-[0px] leading-[5px] font-light flex items-center justify-center w-full h-full z-[3]">
-                +
-              </div>
-            </div>
-            <div className="absolute top-[0px] left-[2.3px] w-[44.6px] h-[5px]">
-              <div className="absolute top-[0px] left-[0px] leading-[5px] font-medium flex items-center justify-center w-full h-full z-[4]">
-                +
-              </div>
-              <div className="absolute top-[0px] left-[0px] leading-[5px] font-light flex items-center justify-center w-full h-full z-[5]">
-                +
-              </div>
-            </div>
-          </div>
-          <div className="h-[5px] w-[44.6px] relative">
-            <div className="absolute top-[0px] left-[0px] leading-[5px] font-medium flex items-center justify-center w-full h-full z-[2]">
-              +
-            </div>
-            <div className="absolute top-[0px] left-[0px] leading-[5px] font-light flex items-center justify-center w-full h-full z-[3]">
-              +
-            </div>
-          </div>
         </div>
       </div>
     </header>

@@ -8,18 +8,6 @@ interface QuantumSurveillanceProps {
 
 export function QuantumSurveillance({ backroomDialogue, responseTime }: QuantumSurveillanceProps) {
   return (
-    <Card 
-      title={
-        <div className="text-green-400 text-lg font-bold text-center">
-          ⚛️ Quantum Surveillance ⚛️
-        </div>
-      }
-      headStyle={{ 
-        backgroundColor: '#000', 
-        borderBottom: '1px solid #1a1a1a'
-      }}
-      className="w-full bg-black text-green-500 font-mono"
-    >
       <div className="flex flex-col gap-4 max-h-[300px] overflow-y-auto">
         {responseTime && (
           <div className="text-xs text-yellow-500">
@@ -29,12 +17,12 @@ export function QuantumSurveillance({ backroomDialogue, responseTime }: QuantumS
         {backroomDialogue && (
           <div className="flex flex-col gap-2">
             {backroomDialogue.igor.map((text, index) => (
-              <div key={`igor-${index}`} className="text-sm">
+              <div key={`igor-${index}`} className="text-lg">
                 <strong className="text-red-500">Igor:</strong> {text}
               </div>
             ))}
             {backroomDialogue.grichka.map((text, index) => (
-              <div key={`grichka-${index}`} className="text-sm">
+              <div key={`grichka-${index}`} className="text-lg">
                 <strong className="text-blue-500">Grichka:</strong> {text}
               </div>
             ))}
@@ -44,6 +32,5 @@ export function QuantumSurveillance({ backroomDialogue, responseTime }: QuantumS
           </div>
         )}
       </div>
-    </Card>
   );
 } 
