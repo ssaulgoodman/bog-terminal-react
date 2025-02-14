@@ -1,11 +1,11 @@
 import { useRef, useState } from "react";
 import FrameComponent1 from "../components/FrameComponent1";
 import { DefaultCard } from "../components/DefaultCard";
+import PixiCanvas from "../live2d/PixiCanvas";
 import { Live2DModel } from "pixi-live2d-display";
 import { MotionSync } from "live2d-motionsync";
 import { useSpeechHandler } from "../components/SpeechHandler";
 import { BackroomDialogue, ChatMessage, DualSpeechResponse } from "../types";
-import PixiCanvas from "../live2d/PixiCanvas";
 import { Spin } from "antd";
 import { MessagesWindow } from "../components/chatwindow";
 import { ChatsendWindow } from "../components/ChatSendWindow";
@@ -56,8 +56,9 @@ function Aipage() {
   const leftMotionSync = useRef<MotionSync | undefined>(undefined);
   const rightMotionSync = useRef<MotionSync | undefined>(undefined);
 
-  const leftModelName = "igor"; // Predefined left model
-  const rightModelName = "igor"; // Predefined right model
+  const leftModelName = "GrichkaRig5"; // Predefined left model
+  const rightModelName = "GrichkaRig5"; // Predefined right model
+
 
   const [loading, setLoading] = useState(true);
 
@@ -105,14 +106,7 @@ function Aipage() {
         };
         setMessages((prev) => [...prev, igorMessage]);
 
-        const igorAudio = new Audio(response.igor.audioUrl);
-        leftMotionSync.current?.play(response.igor.audioUrl);
-
-        await new Promise<void>((resolve) => {
-          igorAudio.onended = () => resolve;
-          igorAudio.play();
-        });
-
+        await leftMotionSync.current?.play(response.igor.audioUrl);
         // Add Grichka's message and play audio.
         const grichkaMessage: ChatMessage = {
           id: Date.now().toString(),
@@ -121,7 +115,7 @@ function Aipage() {
           timestamp: Date.now(),
         };
         setMessages((prev) => [...prev, grichkaMessage]);
-        rightMotionSync.current?.play(response.grichka.audioUrl);
+        await rightMotionSync.current?.play(response.grichka.audioUrl);
       };
 
       await playSequentially();

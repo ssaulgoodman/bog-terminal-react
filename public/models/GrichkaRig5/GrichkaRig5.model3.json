@@ -1,0 +1,59 @@
+{
+	"Version": 3,
+	"FileReferences": {
+		"Moc": "GrichkaRig5.moc3",
+		"Textures": [
+			"GrichkaRig5.2048/texture_00.png"
+		],
+		"Physics": "GrichkaRig5.physics3.json",
+		"DisplayInfo": "GrichkaRig5.cdi3.json",
+		"Expressions": [
+			{
+				"Name": "GrichkaRigDefault",
+				"File": "expressions/GrichkaRig5Default.exp3.json"
+			},
+			{
+				"Name": "GrichkaRigExcited",
+				"File": "expressions/GrichkaRig5Excited.exp3.json"
+			},
+			{
+				"Name": "GrichkaRigHappy",
+				"File": "expressions/GrichkaRig5Happy.exp3.json"
+			},
+			{
+				"Name": "GrichkaRigScheming",
+				"File": "expressions/GrichkaRig5Scheming.exp3.json"
+			},
+			{
+				"Name": "GrichkaRigAngry",
+				"File": "expressions/GrichkaRig5Angry.exp3.json"
+			}
+		],
+		"Motions": {
+			"": [
+				{
+					"File": "motions/GrichkaRig5.motion3.json",
+					"Name": "motion1"
+				}
+			]
+		}
+	},
+	"Groups": [
+		{
+			"Target": "Parameter",
+			"Name": "LipSync",
+			"Ids": [
+				"ParamMouthOpenY"
+			]
+		},
+		{
+			"Target": "Parameter",
+			"Name": "EyeBlink",
+			"Ids": [
+				"ParamEyeLOpen",
+				"ParamEyeROpen"
+			]
+		}
+	],
+	"HitAreas": []
+}

@@ -1,4 +1,5 @@
 export const modelMap: Record<string, string> = {
-    BogDanoff: "/models/Bogdanoff2/Bogdanoff2.model3.json",
-    igor: "/models/IgorRigged/IGOR_2d0.model3.json",
-  };
+  BogDanoff: "/models/Bogdanoff2/Bogdanoff2.model3.json",
+  igor: "/models/IgorRigged/IGOR_2d0.model3.json",
+  GrichkaRig5: "/models/GrichkaRig5/GrichkaRig5.model3.json",
+};

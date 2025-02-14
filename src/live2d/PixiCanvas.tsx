@@ -8,11 +8,11 @@ type PixiCanvasProps = {
   leftModelName: string;
   rightModelName: string;
   // These refs allow the parent to access the loaded models.
-  leftModelRef: React.MutableRefObject<Live2DModel | null>;
-  rightModelRef: React.MutableRefObject<Live2DModel | null>;
+  leftModelRef: React.RefObject<Live2DModel | null>;
+  rightModelRef: React.RefObject<Live2DModel | null>;
   // These refs allow the parent to access the MotionSync instances.
-  leftMotionSync: React.MutableRefObject<MotionSync | undefined>;
-  rightMotionSync: React.MutableRefObject<MotionSync | undefined>;
+  leftMotionSync: React.RefObject<MotionSync | undefined>;
+  rightMotionSync: React.RefObject<MotionSync | undefined>;
   // A callback to control the loading spinner in the parent.
   setLoading: (loading: boolean) => void;
 };
@@ -30,6 +30,7 @@ export default function PixiCanvas({
 
   useEffect(() => {
     let app: PIXI.Application;
+    Live2DModel.registerTicker(PIXI.Ticker);
 
     const loadModels = async () => {
       if (!canvasRef.current) return;
@@ -67,8 +68,8 @@ export default function PixiCanvas({
       // then to add an extra scale factor:
       const leftextraScale = 1.2;
 
-      leftModel.width *= leftextraScale;
-      leftModel.height *= leftextraScale;
+      // leftModel.width *= leftextraScale;
+      // leftModel.height *= leftextraScale;
       leftModel.x = canvasWidth / 4 - leftModel.width / 2 + 100; // shifted right by 100px
       leftModel.y = 0;
 
@@ -78,8 +79,8 @@ export default function PixiCanvas({
       rightModel.width = rightModel.height * rightModelRatio;
       const rightextraScale = 1.2;
 
-      rightModel.width *= rightextraScale;
-      rightModel.height *= rightextraScale;
+      // rightModel.width *= rightextraScale;
+      // rightModel.height *= rightextraScale;
       rightModel.x = (3 * canvasWidth) / 4 - rightModel.width / 2 + 100;
       rightModel.y = 0;
 
